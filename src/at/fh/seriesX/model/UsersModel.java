@@ -3,9 +3,9 @@ package at.fh.seriesX.model;
 import java.util.Calendar;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +20,7 @@ import javax.persistence.Version;
 @Table(name = "Users")
 public class UsersModel implements java.io.Serializable {
 
-	@ManyToMany(mappedBy="users",fetch=FetchType.EAGER)
+	@ManyToMany(cascade=CascadeType.PERSIST)  
     @OrderBy("title, genre")
     private Set<SeriesModel> seriesSet;
 	

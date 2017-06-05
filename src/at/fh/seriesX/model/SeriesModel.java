@@ -66,9 +66,10 @@ public class SeriesModel implements java.io.Serializable {
 	@OrderBy("seasonNumber,episodeNumer")
 	private Set<EpisodeModel> episodesSets;
 	
-	@ManyToMany (mappedBy="series", fetch=FetchType.EAGER)
+	@ManyToMany(cascade=CascadeType.PERSIST)  
 	@OrderBy("firstName,lastName")
 	private Set<UsersModel> usersSet;
+	
 	
 	
 	@Version
