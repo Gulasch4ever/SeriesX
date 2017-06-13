@@ -68,13 +68,13 @@
 	<!-- if no Controller can handle a request, ask Servlet Container, if he 
 		can handle it, otherwise return 404 -->
 	
+
 	
+	<mvc:resources mapping="images/**" location="/images/" />
+	<mvc:resources mapping="css/**" location="/css/" />
+	<mvc:resources mapping="js/**" location="/js/" />
+	<mvc:resources mapping="fonts/**" location="/fonts/" />
 	
-	<mvc:resources mapping="bootstrap.css" location="/WEB-INF/" />
-	<mvc:resources mapping="bootstrap.min.css" location="/WEB-INF/" />
-	<mvc:resources mapping="shop-homepage.css" location="/WEB-INF/" />
-	
-	<mvc:resources mapping="/images/**" location="/images/" />
 	
 	
 	
@@ -82,7 +82,7 @@
 
 	<bean id="templateResolver"
 		class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
-		<property name="prefix" value="/WEB-INF/templates/" />
+		<property name="prefix" value="/WEB-INF/resources/" />
 		<property name="suffix" value=".html" />
 		<property name="templateMode" value="HTML5" />
 		<property name="cacheable" value="false" />
