@@ -72,6 +72,8 @@
 	<mvc:resources mapping="bootstrap.css" location="/WEB-INF/css" />
 	<mvc:resources mapping="bootstrap.min.css" location="/WEB-INF/css" />
 	<mvc:resources mapping="shop-homepage.css" location="/WEB-INF/css" />
+	
+	
 
 
 	<bean id="templateResolver"
