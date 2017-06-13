@@ -67,7 +67,11 @@
 
 	<!-- if no Controller can handle a request, ask Servlet Container, if he 
 		can handle it, otherwise return 404 -->
-	<mvc:default-servlet-handler />
+	
+	
+	<mvc:resources mapping="bootstrap.css" location="/WEB-INF/css" />
+	<mvc:resources mapping="bootstrap.min.css" location="/WEB-INF/css" />
+	<mvc:resources mapping="shop-homepage.css" location="/WEB-INF/css" />
 
 
 	<bean id="templateResolver"
