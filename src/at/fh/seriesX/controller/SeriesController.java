@@ -18,7 +18,7 @@ public class SeriesController {
 	// more to come!
 	
 	@RequestMapping("/fillSeriesList")
-	public String fillGulyasList() {
+	public String fillSeriesList() {
 		
 		String dec1 = "dfsiuhsadhufoasdhfdsahofidshafdsih";
  
