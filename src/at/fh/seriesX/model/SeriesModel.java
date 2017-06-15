@@ -1,7 +1,7 @@
 package at.fh.seriesX.model;
 
 import java.util.Calendar;
-import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,9 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
@@ -195,6 +192,31 @@ public class SeriesModel implements java.io.Serializable {
 	public void setYearOfRelease(Calendar yearOfRelease) {
 		this.yearOfRelease = yearOfRelease;
 	}
+	
+	
+	public Set<EpisodeModel> getEpisode() {
+		return episodesSets;
+	}
+
+	public void setEmployees(Set<EpisodeModel> employees) {
+		this.episodesSets = employees;
+	}
+	
+	public void addEmployee(EpisodeModel employee) {
+		if (episodesSets==null) {
+			episodesSets= new HashSet<EpisodeModel>();
+		}
+		episodesSets.add(employee);
+	}
+	
+	public Set<UsersModel> getGulyas() {
+		return usersSet;
+	}
+ 
+	public void setGulyas(Set<UsersModel> gulyasP) {
+		this.usersSet = gulyasP;
+	}
+	
 	
 	
 }
