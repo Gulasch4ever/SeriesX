@@ -1,10 +1,10 @@
 package at.fh.seriesX.controller;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import at.fh.seriesX.model.SeriesModel;
 
 @Controller 
 public class SeriesController {
@@ -17,6 +17,13 @@ public class SeriesController {
 	}
 	// more to come!
 	
-	
+	@RequestMapping("/fillSeriesList")
+	public String fillGulyasList() {
+ 
+		//SeriesModel seriesModel = new SeriesModel("How I Met Your Mother",)
+		
+		
+		return "forward:/listSeries";
+	}
 	
 }
