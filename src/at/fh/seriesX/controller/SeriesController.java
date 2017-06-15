@@ -19,8 +19,10 @@ public class SeriesController {
 	
 	@RequestMapping("/fillSeriesList")
 	public String fillGulyasList() {
+		
+		String dec1 = "dfsiuhsadhufoasdhfdsahofidshafdsih";
  
-		//SeriesModel seriesModel = new SeriesModel("How I Met Your Mother",)
+		//SeriesModel seriesModel = new SeriesModel("How I Met Your Mother","dec1")
 		
 		
 		return "forward:/listSeries";
