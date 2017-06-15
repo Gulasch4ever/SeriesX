@@ -52,14 +52,14 @@ public class SeriesModel implements java.io.Serializable {
 	private boolean nsfw;
 	
 	@Column(nullable = false, length = 30)
-	private int season;
+	private int seasonNr;
 	
 	@Column(nullable = false, length = 30)
 	private int rating;
 	 
-	// Date Only, no time part:
-	@Temporal(TemporalType.DATE)
-	private Calendar yearOfRelease;
+
+	@Column(nullable = false, length = 30)
+	private int yearOfRelease;
 	
 	
 	@OneToMany (mappedBy="series", fetch=FetchType.EAGER)
@@ -77,10 +77,13 @@ public class SeriesModel implements java.io.Serializable {
 	
 	public SeriesModel() {
 	}
-
+	
+	
+	
+	
 
 	public SeriesModel(String title, String actors, String genre, String author, String description, String type,
-			boolean nsfw, int rating, Calendar yearOfRelease) {
+			boolean nsfw, int seasonNr, int rating, int yearOfRelease) {
 		super();
 		this.title = title;
 		this.actors = actors;
@@ -89,133 +92,120 @@ public class SeriesModel implements java.io.Serializable {
 		this.description = description;
 		this.type = type;
 		this.nsfw = nsfw;
+		this.seasonNr = seasonNr;
 		this.rating = rating;
 		this.yearOfRelease = yearOfRelease;
 	}
+
+
+
 
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getTitle() {
 		return title;
 	}
 
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 	public String getActors() {
 		return actors;
 	}
 
-
 	public void setActors(String actors) {
 		this.actors = actors;
 	}
-
 
 	public String getGenre() {
 		return genre;
 	}
 
-
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
 
 	public String getAuthor() {
 		return author;
 	}
 
-
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-
 
 	public String getDescription() {
 		return description;
 	}
 
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 
 	public String getType() {
 		return type;
 	}
 
-
 	public void setType(String type) {
 		this.type = type;
 	}
-
 
 	public boolean isNsfw() {
 		return nsfw;
 	}
 
-
 	public void setNsfw(boolean nsfw) {
 		this.nsfw = nsfw;
 	}
 
+	public int getSeasonNr() {
+		return seasonNr;
+	}
+
+	public void setSeasonNr(int seasonNr) {
+		this.seasonNr = seasonNr;
+	}
 
 	public int getRating() {
 		return rating;
 	}
 
-
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
-
-	public Calendar getYearOfRelease() {
+	public int getYearOfRelease() {
 		return yearOfRelease;
 	}
 
-
-	public void setYearOfRelease(Calendar yearOfRelease) {
+	public void setYearOfRelease(int yearOfRelease) {
 		this.yearOfRelease = yearOfRelease;
 	}
-	
-	
-	public Set<EpisodeModel> getEpisode() {
+
+	public Set<EpisodeModel> getEpisodesSets() {
 		return episodesSets;
 	}
 
-	public void setEmployees(Set<EpisodeModel> employees) {
-		this.episodesSets = employees;
+	public void setEpisodesSets(Set<EpisodeModel> episodesSets) {
+		this.episodesSets = episodesSets;
 	}
-	
-	public void addEmployee(EpisodeModel employee) {
-		if (episodesSets==null) {
-			episodesSets= new HashSet<EpisodeModel>();
-		}
-		episodesSets.add(employee);
-	}
-	
-	public Set<UsersModel> getGulyas() {
+
+	public Set<UsersModel> getUsersSet() {
 		return usersSet;
 	}
- 
-	public void setGulyas(Set<UsersModel> gulyasP) {
-		this.usersSet = gulyasP;
+
+	public void setUsersSet(Set<UsersModel> usersSet) {
+		this.usersSet = usersSet;
 	}
+
+	
 	
 	
 	
