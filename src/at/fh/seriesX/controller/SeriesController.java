@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,8 +28,17 @@ public class SeriesController {
 	
 	@RequestMapping(value = { "listSeries" })
 	public String showAllSeries(Model model) {
-		
-		
+			
+	
+		return "listSeries";
+	}
+	
+	
+	@RequestMapping("/fillSeriesList")
+	@Transactional
+	public String fillData(Model model) {
+
+
 		List<SeriesModel> seriesP = new ArrayList<SeriesModel>();
 		
 		
@@ -37,11 +47,9 @@ public class SeriesController {
 		
 		
 		seriesP.forEach((series)->seriesRepository.save(series));
-			
 	
-		return "listSeries";
+		return "forward:list";
 	}
-	
 	
 	
 	
