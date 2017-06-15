@@ -10,7 +10,7 @@ import at.fh.seriesX.model.SeriesModel;
 public class SeriesController {
 
 	
-	@RequestMapping(value = { "/", "list" })
+	@RequestMapping(value = { "/", "index" })
 	public String index(Model model) {
 		
 		return "index";
