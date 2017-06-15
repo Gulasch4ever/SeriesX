@@ -38,9 +38,10 @@ public class SeriesController {
 		
 		seriesP.forEach((series)->seriesRepository.save(series));
 			
-		
+	
 		return "listSeries";
 	}
+	
 	
 	
 	
