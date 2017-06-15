@@ -32,7 +32,7 @@ public class SeriesModel implements java.io.Serializable {
 	@Column(nullable = false, length = 30)
 	private String title;
 	 
-	@Column(columnDefinition = "TEXT")
+	@Column(nullable = false, length = 30)
 	private String actors;
 	
 	@Column(nullable = false, length = 30)
@@ -41,24 +41,24 @@ public class SeriesModel implements java.io.Serializable {
 	@Column(nullable = false, length = 30)
 	private String author;
 	
-	@Column(columnDefinition = "TEXT")
+	@Column(nullable = false, length = 30)
 	private String description;
 	
 	//type defines what kind of series it is (e.g. Vikings is 'brutal')
 	@Column(nullable = false, length = 30)
 	private String type;
 	// true when 18 or older 
-	@Column(nullable = false, length = 30)
-	private boolean nsfw;
+	@Column(name = "nsfw")
+	private int nsfw;
 	
-	@Column(nullable = false, length = 30)
+	@Column(name = "seasonNr")
 	private int seasonNr;
 	
-	@Column(nullable = false, length = 30)
+	@Column(name = "rating")
 	private int rating;
 	 
 
-	@Column(nullable = false, length = 30)
+	@Column(name = "yearOfRelease")
 	private int yearOfRelease;
 	
 	
@@ -83,7 +83,7 @@ public class SeriesModel implements java.io.Serializable {
 	
 
 	public SeriesModel(String title, String actors, String genre, String author, String description, String type,
-			boolean nsfw, int seasonNr, int rating, int yearOfRelease) {
+			int nsfw, int seasonNr, int rating, int yearOfRelease) {
 		super();
 		this.title = title;
 		this.actors = actors;
@@ -157,11 +157,11 @@ public class SeriesModel implements java.io.Serializable {
 		this.type = type;
 	}
 
-	public boolean isNsfw() {
+	public int isNsfw() {
 		return nsfw;
 	}
 
-	public void setNsfw(boolean nsfw) {
+	public void setNsfw(int nsfw) {
 		this.nsfw = nsfw;
 	}
 

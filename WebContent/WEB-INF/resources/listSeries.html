@@ -171,7 +171,7 @@
 					</thead>
 					<tbody>
 						<!--  list all items ----------------------------------------------------------- -->
-						<tr th:each="series : ${#request.getAttribute('seriesx')}">
+						<tr th:each="series : ${seriesP}">
 							<td th:text="${series.id}"></td>
 							<td th:text="${series.title}"></td>
 							<td th:text="${series.genre}"></td>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import at.fh.seriesX.dao.SeriesRepository;
@@ -26,9 +27,13 @@ public class SeriesController {
 	
 	
 	
-	@RequestMapping(value = { "listSeries" })
+	@RequestMapping(value = { "/listSeries" })
 	public String showAllSeries(Model model) {
 			
+		
+		List<SeriesModel> seriesP = seriesRepository.findAll();
+		model.addAttribute("seriesP", seriesP);
+		
 	
 		return "listSeries";
 	}
@@ -38,7 +43,7 @@ public class SeriesController {
 	@Transactional
 	public String fillData(Model model) {
 
-
+/*
 		List<SeriesModel> seriesP = new ArrayList<SeriesModel>();
 		
 		
@@ -47,8 +52,11 @@ public class SeriesController {
 		
 		
 		seriesP.forEach((series)->seriesRepository.save(series));
-	
-		return "forward:list";
+*/
+		
+		seriesRepository.save(new SeriesModel("A","B","C","D","E","6",2,1,2,3));
+		
+		return "forward:listSeries";
 	}
 	
 	
@@ -66,6 +74,6 @@ public class SeriesController {
 		
 		return "editSeries";
 	}
-
+	
 	
 }
