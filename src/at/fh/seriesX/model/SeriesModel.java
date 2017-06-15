@@ -62,7 +62,7 @@ public class SeriesModel implements java.io.Serializable {
 	private int yearOfRelease;
 	
 	
-	@OneToMany (mappedBy="series", fetch=FetchType.EAGER)
+	@OneToMany (mappedBy="series", fetch=FetchType.LAZY)
 	@OrderBy("seasonNumber,episodeNumer")
 	private Set<EpisodeModel> episodesSets;
 	

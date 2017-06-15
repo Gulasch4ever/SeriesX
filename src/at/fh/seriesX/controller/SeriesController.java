@@ -53,6 +53,12 @@ public class SeriesController {
 		
 		seriesP.forEach((series)->seriesRepository.save(series));
 */
+		//Error bevor man den Button drückt EL1007E: Property or field 'parameterName' cannot be found on null
+		//Error nach drücken ->org.springframework.dao.InvalidDataAccessResourceUsageException:
+		
+		
+		
+		
 		
 		seriesRepository.save(new SeriesModel("A","B","C","D","E","6",2,1,2,3));
 		
