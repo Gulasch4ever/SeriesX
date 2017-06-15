@@ -22,7 +22,7 @@ public class SeriesController {
 		
 		String dec1 = "dfsiuhsadhufoasdhfdsahofidshafdsih";
  
-		//SeriesModel seriesModel = new SeriesModel("How I Met Your Mother","dec1")
+		SeriesModel seriesModel = new SeriesModel("How I Met Your Mother",""
 		
 		
 		return "forward:/listSeries";
