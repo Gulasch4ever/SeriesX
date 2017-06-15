@@ -18,23 +18,16 @@ public class SeriesController {
 		
 		return "index";
 	}
-	// more to come!
 	
-	@RequestMapping("/fillSeriesList")
-	public String fillSeriesList() {
-		
-		String dec1 = "dfsiuhsadhufoasdhfdsahofidshafdsih";
- 
-		
-		
-		//SeriesModel hIMYMother = new SeriesModel("How I Met Your Mother",""
-		
-		
-		return "forward:/listSeries";
-	}
+	
 	
 	@RequestMapping(value = { "listSeries" })
 	public String showAllSeries(Model model) {
+		
+		
+		
+		
+		
 		
 		return "listSeries";
 	}
