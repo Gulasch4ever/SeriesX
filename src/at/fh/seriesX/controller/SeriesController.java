@@ -15,6 +15,8 @@ public class SeriesController {
 		
 		return "index";
 	}
+	// more to come!
+	
 	
 	
 }
