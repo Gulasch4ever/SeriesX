@@ -26,4 +26,10 @@ public class SeriesController {
 		return "forward:/listSeries";
 	}
 	
+	@RequestMapping(value = { "listSeries" })
+	public String showAllSeries(Model model) {
+		
+		return "listSeries";
+	}
+	
 }
