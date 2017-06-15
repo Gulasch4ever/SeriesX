@@ -50,9 +50,12 @@ public class SeriesModel implements java.io.Serializable {
 	//type defines what kind of series it is (e.g. Vikings is 'brutal')
 	@Column(nullable = false, length = 30)
 	private String type;
-	
+	// true when 18 or older 
 	@Column(nullable = false, length = 30)
 	private boolean nsfw;
+	
+	@Column(nullable = false, length = 30)
+	private int season;
 	
 	@Column(nullable = false, length = 30)
 	private int rating;
