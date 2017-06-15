@@ -39,7 +39,13 @@ public class SeriesController {
 	@RequestMapping(value = { "addSeries" })
 	public String showAddSeriesForm(Model model) {
 		
-		return "addSeries";
+		return "editSeries";
+	}
+	
+	@RequestMapping(value = { "editSeries" })
+	public String showEditSeriesForm(Model model) {
+		
+		return "editSeries";
 	}
 
 	
