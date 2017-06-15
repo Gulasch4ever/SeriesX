@@ -37,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="list">Series-X</a>
+                <a class="navbar-brand" href="index">Series-X</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -52,7 +52,7 @@
                         <a href="#">Contact</a>
                     </li>
                     <li style="position:absolute;right:50px;">
-                        <a href="#">Login</a>
+                        <a href="login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
 	<div class="container" role="main">
 
 		<div class="page-header">
-			<h1>Employee Management</h1>
+			<h1>Series</h1>
 		</div>
 
 		<!--  Error message ----------------------------------------------------------- -->
@@ -83,58 +83,110 @@
 		<!--   message ----------------------------------------------------------- -->
 
 		<nav th:replace="~{includes/searchNav :: search}"></nav>
-
-		<!--  2 simple buttons ----------------------------------------------------------- -->
+		
+		<!--  search by Id ----------------------------------------------------------- -->
 		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-12">
+				<form class="form-horizontal" action="findById" method="post">
+					<div class="form-group">
+						<label class="control-label col-md-2" for="id">Find by Id:</label>
+						<div class="col-md-5">
+					 		<input type="text" name="id">
+						</div>
+						<div class="col-md-5">
+					  		<input class="btn btn-default" type="submit" value="Do it">
+						</div>		
+					</div>		
+				</form>
+			</div>
+		</div>
+
+		<hr>
+
+
+		<!--  Search + Fill ----------------------------------------------------------- -->
+			<div class="row">
+				<div class="col-md-12">
+					<form class="form-horizontal" method="post" action="find">
+						<div class="form-group">
+							<label class="control-label col-md-2" for="searchType">Search:</label> 
+							<div class="col-md-5">
+								<select name="searchType">
+									<option value="query1" selected="selected">Show all series</option>							
+									<option value="query2">Filter series by title</option>
+									<option value="query3">Filter series by genre</option>
+									<option value="query5">search with named query</option>
+									<option value="query7">delete series with given genre</option>
+									<option value="query9">list of employees title contains a given searchstring</option>
+									<option value="query10">order list by title</option>
+									<option value="query11">Sort all employees by genre ascending (top 10)</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-2" for="searchString">SearchString:</label>
+						<div class="col-md-5">
+					 		<input type="text" name="searchString"> 
+						</div>
+						<div class="col-md-5">
+					  		<input class="btn btn-default" type="submit" value="Do it">
+						</div>		
+					</div>	
+				</form>
+			</div>
+			</div>
+			<hr>
+
+		<!--  Search + Fill ----------------------------------------------------------- -->
+
+		<!--  1 simple buttons ----------------------------------------------------------- -->
+		<div class="row">
+			<div class="col-md-4 col-md-offset-5">
 				<p>
-					<a href="addEmployee">
+					<a href="addSeries">
 						<button type="button" class="btn btn-success">Add new
-							Employee</button>
-					</a> <a href="fillEmployeeList">
-						<button type="button" class="btn btn-success">Fill List</button>
-					</a>
+							Series</button>
 				</p>
 			</div>
 		</div>
-		<!--  2 simple buttons ----------------------------------------------------------- -->
+		<!--  1 simple buttons ----------------------------------------------------------- -->
 
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-12 col-md-offset-15">
 
 				<table data-toggle="table" class="table table-striped">
 					<thead>
 						<tr>
-							<th data-sortable="true">SSN</th>
-							<th data-sortable="true">First Name</th>
-							<th data-sortable="true">Last Name</th>
-							<th data-sortable="true">Day of birth</th>
+							<th data-sortable="true">ID</th>
+							<th data-sortable="true">Title</th>
+							<th data-sortable="true">Genre</th>
+							<th data-sortable="true">Type</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 						<!--  list all items ----------------------------------------------------------- -->
-						<tr th:each="employee : ${#request.getAttribute('employees')}">
-							<td th:text="${employee.ssn}"></td>
-							<td th:text="${employee.firstName}"></td>
-							<td th:text="${employee.lastName}"></td>
-							<td
-								th:text="${#calendars.format(employee.dayOfBirth,'dd.MM.yyyy')}"></td>
+						<tr th:each="series : ${#request.getAttribute('seriesx')}">
+							<td th:text="${series.id}"></td>
+							<td th:text="${series.title}"></td>
+							<td th:text="${series.genre}"></td>
+							<td th:text="${series.season}"></td>
 							<td>
 							<span sec:authorize="hasRole('ADMIN')">
-							<a th:href="@{/deleteEmployee(ssn=${employee.ssn})}">
+							<a th:href="@{/deleteSeries(id=${series.id})}">
 									<button type="button" class="btn btn-xs btn-danger">
 										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 										Delete
 									</button>
 							</a>
 							</span>
-							<a th:href="@{/editEmployee(ssn=${employee.ssn})}">
+							<span sec:authorize="hasRole('ADMIN')">
+							<a th:href="@{/editSeries(id=${series.id})}">
 									<button type="button" class="btn btn-xs btn-success">
 										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 										Edit
 									</button>
-							</a></td>
+							</a></span></td>
 						</tr>
 						<!--  list all items ----------------------------------------------------------- -->
 					</tbody>
