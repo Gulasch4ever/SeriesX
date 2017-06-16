@@ -4,11 +4,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import at.fh.seriesX.model.EpisodeModel;
+import at.fh.seriesX.model.SeasonModel;
 
 @Repository
 @Transactional
-public interface EpisodeRepository extends JpaRepository<EpisodeModel,Integer> {
+public interface SeasonRepository extends JpaRepository<SeasonModel,Integer> {
 
 	
 }

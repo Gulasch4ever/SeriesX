@@ -1,7 +1,6 @@
 package at.fh.seriesX.model;
 
-import java.util.Calendar;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,8 +14,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
 @Entity
@@ -63,8 +60,8 @@ public class SeriesModel implements java.io.Serializable {
 	
 	
 	@OneToMany (mappedBy="series", fetch=FetchType.LAZY)
-	@OrderBy("seasonNumber,episodeNumer")
-	private Set<EpisodeModel> episodesSets;
+	@OrderBy("seasonNumber")
+	private List<SeasonModel> SeasonSets;
 	
 	@ManyToMany(cascade=CascadeType.PERSIST)  
 	@OrderBy("firstName,lastName")
@@ -105,108 +102,211 @@ public class SeriesModel implements java.io.Serializable {
 		return id;
 	}
 
+
+
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
+
+
 
 	public String getTitle() {
 		return title;
 	}
 
+
+
+
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+
+
+
 
 	public String getActors() {
 		return actors;
 	}
 
+
+
+
+
 	public void setActors(String actors) {
 		this.actors = actors;
 	}
+
+
+
+
 
 	public String getGenre() {
 		return genre;
 	}
 
+
+
+
+
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+
+
+
+
 
 	public String getAuthor() {
 		return author;
 	}
 
+
+
+
+
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+
+
+
+
 
 	public String getDescription() {
 		return description;
 	}
 
+
+
+
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+
+
+
 
 	public String getType() {
 		return type;
 	}
 
+
+
+
+
 	public void setType(String type) {
 		this.type = type;
 	}
 
-	public int isNsfw() {
+
+
+
+
+	public int getNsfw() {
 		return nsfw;
 	}
+
+
+
+
 
 	public void setNsfw(int nsfw) {
 		this.nsfw = nsfw;
 	}
 
+
+
+
+
 	public int getSeasonNr() {
 		return seasonNr;
 	}
+
+
+
+
 
 	public void setSeasonNr(int seasonNr) {
 		this.seasonNr = seasonNr;
 	}
 
+
+
+
+
 	public int getRating() {
 		return rating;
 	}
+
+
+
+
 
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
+
+
+
+
 	public int getYearOfRelease() {
 		return yearOfRelease;
 	}
+
+
+
+
 
 	public void setYearOfRelease(int yearOfRelease) {
 		this.yearOfRelease = yearOfRelease;
 	}
 
-	public Set<EpisodeModel> getEpisodesSets() {
-		return episodesSets;
+
+
+
+
+	public List<SeasonModel> getSeasonSets() {
+		return SeasonSets;
 	}
 
-	public void setEpisodesSets(Set<EpisodeModel> episodesSets) {
-		this.episodesSets = episodesSets;
+
+
+
+
+	public void setSeasonSets(List<SeasonModel> seasonSets) {
+		SeasonSets = seasonSets;
 	}
+
+
+
+
 
 	public Set<UsersModel> getUsersSet() {
 		return usersSet;
 	}
 
+
+
+
+
 	public void setUsersSet(Set<UsersModel> usersSet) {
 		this.usersSet = usersSet;
 	}
 
-	
-	
+
+
+
+
+
 	
 	
 }

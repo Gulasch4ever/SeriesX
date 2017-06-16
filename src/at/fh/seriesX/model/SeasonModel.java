@@ -18,23 +18,21 @@ import javax.persistence.Version;
 @Entity
 @Table(name = "Episodes")
 
-public class EpisodeModel implements java.io.Serializable {
+public class SeasonModel implements java.io.Serializable {
 
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(nullable = false, length = 30)
+	@Column(name = "seasonNumber")
 	private int seasonNumber;
 	
-	@Column(nullable = false, length = 30)
-	private int episodeNumber;
+	@Column(name = "episodeSum")
+	private int episodeSum;
 	
-	@Column(nullable = false, length = 30)
-	private String episodeTitle;
-	
-	//duration = how long a episode lasts in minutes
+
+	//duration = how long a season lasts in minutes
 	@Column(nullable = false, length = 30)
 	private int duration;
 	
@@ -44,14 +42,16 @@ public class EpisodeModel implements java.io.Serializable {
 	@Version
 	long version;
 	
-	public EpisodeModel() {
+	
+	public SeasonModel() {
+		
 	}
+	
 
-	public EpisodeModel(int seasonNumber, int episodeNumber, String episodeTitle, int duration) {
+	public SeasonModel(int seasonNumber, int episodeSum, int duration) {
 		super();
 		this.seasonNumber = seasonNumber;
-		this.episodeNumber = episodeNumber;
-		this.episodeTitle = episodeTitle;
+		this.episodeSum = episodeSum;
 		this.duration = duration;
 	}
 
@@ -71,20 +71,12 @@ public class EpisodeModel implements java.io.Serializable {
 		this.seasonNumber = seasonNumber;
 	}
 
-	public int getEpisodeNumber() {
-		return episodeNumber;
+	public int getEpisodeSum() {
+		return episodeSum;
 	}
 
-	public void setEpisodeNumber(int episodeNumber) {
-		this.episodeNumber = episodeNumber;
-	}
-
-	public String getEpisodeTitle() {
-		return episodeTitle;
-	}
-
-	public void setEpisodeTitle(String episodeTitle) {
-		this.episodeTitle = episodeTitle;
+	public void setEpisodeSum(int episodeSum) {
+		this.episodeSum = episodeSum;
 	}
 
 	public int getDuration() {
@@ -102,6 +94,8 @@ public class EpisodeModel implements java.io.Serializable {
 	public void setSeries(SeriesModel series) {
 		this.series = series;
 	}
+	
+	
 	
 	
 }

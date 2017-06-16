@@ -60,6 +60,9 @@ public class SeriesController {
 		String descriptionFriends = "Friends (stylized as F•R•I•E•N•D•S) is an American television sitcom, created by David Crane and Marta Kauffman, which aired on NBC from September 22, 1994, to May 6, 2004, lasting ten seasons.";
 		seriesP.add(new SeriesModel("Friends","Jennifer Aniston;Courteney Cox;Lisa Kudrow;Matt LeBlanc;Matthew Perry","Sitcom","David Crane",descriptionFriends,"fun",0,10,0,1994));
 
+		String descriptionFlash = "The Flash is an American television series developed by Greg Berlanti, Andrew Kreisberg and Geoff Johns, airing on The CW. It is based on the DC Comics character Barry Allen / Flash, a costumed superhero crime-fighter with the power to move at superhuman speeds.";
+		seriesP.add(new SeriesModel("The Flash","Grant Gustin;Candice Patton;Danielle Panabaker;Rick Cosnett","Action","Blake Neely",descriptionFlash,"fast",0,3,0,2014));
+
 		
 		
 		
