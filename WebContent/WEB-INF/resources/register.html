@@ -69,21 +69,45 @@
 					<div th:if="${param.logout}" class="alert alert-success">You
 						have been logged out.</div>
 
-					<label for="inputFirstname" class="sr-only">Firstname</label> 
-						<input type="text" id="firstname" class="form-control" placeholder="Firstname"
-							required autofocus name="firstname"> 
-							
-					<label for="inputLastname" class="sr-only">Lastname</label> 
-						<input type="text" id="lastname" class="form-control" placeholder="Lastname"> 
-							
-					<label for="inputDayOfBirth" class="sr-only">Day of birth</label> 
-						<input type="date" id="dayofbirth" class="form-control" placeholder="Day of birth (mm/dd/yyyy)"> 
-							
-					<label for="inputPassword" class="sr-only">Password</label> 
-						<input type="password" id="password" class="form-control"
-							placeholder="Password" required name="password">
-					<a class="btn btn-lg btn-primary btn-block" type="submit">Register</a>
+					<label for="inputFirstname" class="sr-only">Firstname</label> <input
+						type="text" id="firstname" class="form-control"
+						placeholder="Firstname" required autofocus name="firstname">
 
+					<label for="inputLastname" class="sr-only">Lastname</label> <input
+						type="text" id="lastname" class="form-control"
+						placeholder="Lastname">
+
+
+					<!-- DATEPICKER https://knowledgecornor.blogspot.co.at/2013/08/birthday-dropdown-using-html-and-js.html -->
+					<div class="register-form-row">
+						<div class="register-form-row-col">Date Of Birth :</div>
+						<div class="register-form-row-col">
+							Month :<select name="month" onchange="call()">
+								<option value="">select</option>
+								<option value="1">Jan</option>
+								<option value="2">Feb</option>
+								<option value="3">Mar</option>
+								<option value="4">Apr</option>
+								<option value="5">May</option>
+								<option value="6">Jun</option>
+								<option value="7">Jul</option>
+								<option value="8">Aug</option>
+								<option value="9">Sep</option>
+								<option value="10">Oct</option>
+								<option value="11">Nov</option>
+								<option value="12">Dec</option>
+							</select> Day :<select name="day">
+								<option value="">select</option>
+							</select> Year:<select name="year" onchange="call()">
+								<option value="">select</option>
+							</select>
+						</div>
+
+
+						<label for="inputPassword" class="sr-only">Password</label> <input
+							type="password" id="password" class="form-control"
+							placeholder="Password" required name="password"> <a
+							class="btn btn-lg btn-primary btn-block" type="submit">Register</a>
 				</form>
 			</div>
 		</div>
@@ -111,6 +135,10 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Date Validation -->
+
+	<script src="js/datevalidation.js"></script>
 
 </body>
 
