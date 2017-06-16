@@ -33,7 +33,7 @@
 					<fieldset>
 						<legend th:text="${series}? 'Change series' : 'New series'">New Series</legend>
 
-						<!--  ----------------  ssn ---------------- -->
+						<!--  ----------------  id ---------------- -->
 						<div class="form-group">
 							<label for="inputID" class="col-md-2 control-label">ID</label>
 							<div class="col-md-10">
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 
-						<!-- --------------  first Name ---------------- -->
+						<!-- --------------  title ---------------- -->
 						<div class="form-group">
 							<label for="inputTitle" class="col-md-2 control-label">Title</label>
 							<div class="col-md-10">
@@ -49,7 +49,7 @@
 									name="title" th:value="${series} ? ${series.title}">
 							</div>
 						</div>
-						<!-- --------------  last Name ---------------- -->
+						<!-- --------------  genre ---------------- -->
 						<div class="form-group">
 							<label for="inputGenre" class="col-md-2 control-label">Genre</label>
 							<div class="col-md-10">
@@ -57,8 +57,17 @@
 									name="genre" th:value="${series} ? ${series.genre}">
 							</div>
 						</div>
-
-						<!-- --------------  dayOfBirth ---------------- -->
+						
+						<!-- --------------  description ---------------- -->
+						<div class="form-group">
+							<label for="inputDescription" class="col-md-2 control-label">Description</label>
+							<div class="col-md-10">
+								<input class="form-control" id="inputDescription" type="text"
+									name="description" th:value="${series} ? ${series.description}">
+							</div>
+						</div>
+						
+						<!-- --------------  type  ---------------- -->
 						<div class="form-group">
 							<label for="inputType" class="col-md-2 control-label">Type</label>
 							<div class="col-md-10">
@@ -66,6 +75,53 @@
 									name="type" th:value="${series} ? ${series.type}">
 							</div>
 						</div>
+						
+						<!-- --------------  number of seasons  ---------------- -->
+						<div class="form-group">
+							<label for="inputNrOfSeasons" class="col-md-2 control-label">Number Of Seasons</label>
+							<div class="col-md-10">
+								<input class="form-control" id="inputNrOfSeasons" type="text"
+									name="seasonNr" th:value="${series} ? ${series.seasonNr}">
+							</div>
+						</div>
+						
+						<!-- --------------  actors ---------------- -->
+						<div class="form-group">
+							<label for="inputActors" class="col-md-2 control-label">Actors</label>
+							<div class="col-md-10">
+								<input class="form-control" id="inputActors" type="text"
+									name="actors" th:value="${series} ? ${series.actors}">
+							</div>
+						</div>
+						
+						<!-- --------------  author ---------------- -->
+						<div class="form-group">
+							<label for="inputAuthor" class="col-md-2 control-label">Author</label>
+							<div class="col-md-10">
+								<input class="form-control" id="inputAuthor" type="text"
+									name="author" th:value="${series} ? ${series.author}">
+							</div>
+						</div>
+						
+						<!-- --------------  nsfw ---------------- -->
+						<div class="form-group">
+							<label for="inputNSFW" class="col-md-2 control-label">NSFW</label>
+							<div class="col-md-10">
+								<input class="form-control" id="inputNSFW" type="text"
+									name="nsfw" th:value="${series} ? ${series.nsfw}">
+							</div>
+						</div>
+
+						<!-- --------------  year of release ---------------- -->
+						<div class="form-group">
+							<label for="inputYOR" class="col-md-2 control-label">Year Of Release</label>
+							<div class="col-md-10">
+								<input class="form-control" id="inputYOR" type="text"
+									name="yearOfRelease" th:value="${series} ? ${series.yearOfRelease}">
+							</div>
+						</div>
+						
+					
 
 						<!-- --------------  buttons ---------------- -->
 						<div class="form-group">
