@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import at.fh.seriesX.dao.SeriesRepository;
 import at.fh.seriesX.model.SeriesModel;
@@ -36,6 +37,45 @@ public class SeriesController {
 		
 	
 		return "listSeries";
+	}
+	
+	
+	@RequestMapping(value = {"/find"})
+	public String find(Model model, @RequestParam String searchString, @RequestParam String searchType){
+		List<SeriesModel> seriesP = null;
+		int count=0;
+		
+		switch (searchType) {
+		case "query1":
+			seriesP = seriesRepository.findAll();
+			break;
+		case "query2":
+			seriesP = seriesRepository.findByTitle(searchString);
+			break;
+		case "query3":
+			seriesP = seriesRepository.findByGenre(searchString);
+			break;
+		case "query4":
+			seriesP = seriesRepository.doANameSearchWithLike("%"+searchString+"%");
+			break;
+		case "query5":
+			seriesP = seriesRepository.deleteByGenre(searchString);
+			break;
+		case "query6":
+			seriesP=seriesRepository.findByTitleContainingAllIgnoreCase(searchString);		
+			break;
+		case "query7":
+			seriesP=seriesRepository.findAllOrderByTitle(searchString);		
+			break;
+		case "query8":
+			seriesP=seriesRepository.findTop10ByOrderByGenreAsc(searchString);		
+			break;
+			
+		default:
+			seriesP = seriesRepository.findAll();
+		
+		}
+		return "index";
 	}
 	
 	

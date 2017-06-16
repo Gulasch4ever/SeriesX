@@ -16,8 +16,18 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+
+//import at.fh.swenga.jpa.model.NamedQueries;
+//import at.fh.swenga.jpa.model.NamedQuery;
+
 @Entity
 @Table(name = "Series")
+
+@NamedQueries({
+	@NamedQuery(name = "SeriesModel.doANameSearchWithLike", query = "select s from SeriesModel s where s.title like :search or s.genre like :search")
+})
 
 public class SeriesModel implements java.io.Serializable {
 	
