@@ -43,16 +43,19 @@ public class SeriesController {
 	@Transactional
 	public String fillData(Model model) {
 
-/*
+
 		List<SeriesModel> seriesP = new ArrayList<SeriesModel>();
 		
 		
-		String descriptionHIMYM = "How I Met Your Mother (Englisch für „Wie ich eure Mutter kennenlernte“; kurz: HIMYM) ist eine US-amerikanische Sitcom, die für den Fernsehsender CBS produziert wurde. Die neun Staffeln umfassen 208 Folgen, die von 2005 bis 2014 erstausgestrahlt wurden. In Deutschland ist die Serie auf ProSieben, in Österreich auf ORF eins und in der Schweiz auf 3+ zu sehen. Die Erzählung erfolgt aus der Sicht der Hauptfigur Ted Mosby, der seinen Kindern die Erlebnisse schildert, die dazu geführt haben, dass er ihre Mutter kennengelernt hat. Die Serie erhielt zahlreiche Auszeichnungen, unter anderem neun Emmys.";
-		seriesP.add(new SeriesModel("How I Met Your Mother","Josh Radnor;Jason Segel;Cobie Smulders;Neil Patrick Harris;Alyson Hannigan;Cristin Milioti","Sitcom","Carter Bays",descriptionHIMYM,"lustig",false,9,0,2008));
+		String descriptionHIMYM = "How I Met Your Mother (often abbreviated to HIMYM) is an American sitcom that originally aired on CBS from September 19, 2005 to March 31, 2014. The series follows the main character, Ted Mosby, and his group of friends in Manhattan. As a framing device, Ted, in the year 2030, recounts to his son and daughter the events that led him to meeting their mother.";
+		seriesP.add(new SeriesModel("How I Met Your Mother","Josh Radnor;Jason Segel;Cobie Smulders;Neil Patrick Harris;Alyson Hannigan;Cristin Milioti","Sitcom","Carter Bays",descriptionHIMYM,"fun",0,9,0,2008));
 		
+		String descriptionVik = "Vikings is a historical drama television series written and created by Michael Hirst for the channel History. Filmed in Ireland, it premiered on March 3, 2013 in Canada.";
+		seriesP.add(new SeriesModel("Vikings","Travis Fimmel;Katheryn Winnick;Clive Standen","Action-adventure","Trevor Morris",descriptionVik,"brutal",1,4,0,2013));
+
 		
 		seriesP.forEach((series)->seriesRepository.save(series));
-*/
+
 		//Error bevor man den Button drückt EL1007E: Property or field 'parameterName' cannot be found on null
 		//Error nach drücken ->org.springframework.dao.InvalidDataAccessResourceUsageException:
 		
@@ -60,7 +63,7 @@ public class SeriesController {
 		
 		
 		
-		seriesRepository.save(new SeriesModel("A","B","C","D","E","6",2,1,2,3));
+		
 		
 		return "forward:listSeries";
 	}

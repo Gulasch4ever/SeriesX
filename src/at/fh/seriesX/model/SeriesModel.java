@@ -32,16 +32,16 @@ public class SeriesModel implements java.io.Serializable {
 	@Column(nullable = false, length = 30)
 	private String title;
 	 
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, length=512)
 	private String actors;
 	
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, length=30)
 	private String genre;
 	
 	@Column(nullable = false, length = 30)
 	private String author;
 	
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, length=1024)
 	private String description;
 	
 	//type defines what kind of series it is (e.g. Vikings is 'brutal')

@@ -175,7 +175,7 @@
 							<td th:text="${series.id}"></td>
 							<td th:text="${series.title}"></td>
 							<td th:text="${series.genre}"></td>
-							<td th:text="${series.season}"></td>
+							<td th:text="${series.seasonNr}"></td>
 							<td>
 							<span sec:authorize="hasRole('ADMIN')">
 							<a th:href="@{/deleteSeries(id=${series.id})}">
