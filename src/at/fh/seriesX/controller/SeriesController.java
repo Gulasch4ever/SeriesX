@@ -25,7 +25,7 @@ public class SeriesController {
 		return "index";
 	}
 	
-	
+
 	
 	@RequestMapping(value = { "/listSeries" })
 	public String showAllSeries(Model model) {
@@ -81,5 +81,18 @@ public class SeriesController {
 		return "editSeries";
 	}
 	
+	
+	@RequestMapping(value = { "login" })
+	public String login(Model model) {
+		
+		return "login";
+	}
+	
+	
+	@RequestMapping(value = { "register" })
+	public String register(Model model) {
+		
+		return "register";
+	}
 	
 }
