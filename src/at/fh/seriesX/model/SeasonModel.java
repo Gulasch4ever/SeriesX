@@ -33,7 +33,7 @@ public class SeasonModel implements java.io.Serializable {
 	
 
 	//duration = how long a season lasts in minutes
-	@Column(nullable = false, length = 30)
+	@Column(name = "duration")
 	private int duration;
 	
 	@ManyToOne (cascade = CascadeType.PERSIST)

@@ -40,8 +40,6 @@ public class SeriesModel implements java.io.Serializable {
 	@Column(nullable = false, length = 30)
 	private String title;
 	 
-	@Column(nullable = false, length=512)
-	private String actors;
 	
 	@Column(nullable = false, length=30)
 	private String genre;
@@ -84,16 +82,14 @@ public class SeriesModel implements java.io.Serializable {
 	long version;
 	
 	
-	
-	
 	public SeriesModel() {
 	}
 	
-	public SeriesModel(String title, String actors, String genre, String author, String description, String type,
+	public SeriesModel(String title, String genre, String author, String description, String type,
 			int nsfw, int seasonNr, int rating, int yearOfRelease) {
 		super();
 		this.title = title;
-		this.actors = actors;
+	
 		this.genre = genre;
 		this.author = author;
 		this.description = description;
@@ -124,13 +120,6 @@ public class SeriesModel implements java.io.Serializable {
 		this.title = title;
 	}
 
-	public String getActors() {
-		return actors;
-	}
-
-	public void setActors(String actors) {
-		this.actors = actors;
-	}
 
 	public String getGenre() {
 		return genre;
