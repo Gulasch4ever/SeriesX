@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
 @Entity
-@Table(name = "Episodes")
+@Table(name = "Season")
 
 public class SeasonModel implements java.io.Serializable {
 
