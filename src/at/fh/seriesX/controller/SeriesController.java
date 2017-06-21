@@ -274,6 +274,14 @@ public class SeriesController {
 		return "editSeries";
 	}
 	
+	@RequestMapping("/deleteSeries")
+	public String deleteData(Model model, @RequestParam int id) {
+		seriesRepository.delete(id);
+
+		return "forward:listSeries";
+	}
+	
+	
 	
 	@RequestMapping(value = { "login" })
 	public String login(Model model) {
