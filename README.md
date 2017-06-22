@@ -6,6 +6,8 @@
 
 **Team members:** László Baló / Philipp Göschl / Labinot Jashanica / Teresa Neuhold
 
+**Work distribution:** 
+
 **Description:** 
 
 The webpage should allow the users to lookup their favorite series. You should be able to select your favorite series/shows/anime and lookup information like author, director, actors, etc and sum up the time which they investigate in watching series. 
