@@ -8,7 +8,21 @@
 
 **Work distribution:** 
 * László Baló:
-  * Test
+  * Database
+  * Controller 
+  * Model
+  * Overview of the project
+  
+* Philipp Göschl:
+  * Model
+  * HTML 
+  * Structure Design
+  
+* Labinot Jashanica:
+  * Template implementation
+  * HTML  
+  * Login
+  * Security
 
 **Description:** 
 
