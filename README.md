@@ -7,6 +7,8 @@
 **Team members:** László Baló / Philipp Göschl / Labinot Jashanica / Teresa Neuhold
 
 **Work distribution:** 
+* László Baló:
+  * Test
 
 **Description:** 
 
